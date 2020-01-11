@@ -19,7 +19,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: html/
+          at: .
       - run:
           name: Install and configure dependencies
           command: |
@@ -32,7 +32,7 @@ jobs:
             - "d6:ca:09:9d:40:ac:77:09:6b:a0:d3:ba:74:ac:34:6b"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --message "[skip ci] doc upload" --dist .
+          command: gh-pages --message "[skip ci] doc upload" --dist html
 
 workflows:
   version: 2
